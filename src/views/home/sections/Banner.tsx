@@ -22,51 +22,57 @@ import { fadeIn } from "@/utils/framerMotion";
 
 const Banner = () => {
   return (
-    <Container flex="1" maxWidth={"full"} padding={0}>
-      <Box bg={"#EDEEF3"} minH="container.sm" position={"relative"}>
-        <Box position={"absolute"} left={0} top="40%">
-          <Image src={shape3} alt="image" />
+    <Container flex="1" maxW={"full"} padding={0}>
+      <Box bg={"#EDEEF3"} minH="container.sm" position="relative">
+        <Box
+          position={"absolute"}
+          left={0}
+          top="40%"
+          display={{ base: "none", lg: "block" }}
+        >
+          <Image src={shape3} alt="shape" />
         </Box>
         <Box position={"absolute"} left={0} top="20%">
-          <Image src={heroCircle} alt="image" />
+          <Image src={heroCircle} alt="shape" />
         </Box>
-        <Box position={"absolute"} right={0} top="40%">
-          <Image src={heroDot} alt="image" />
+        <Box position={"absolute"} right={0} top="30%">
+          <Image src={heroDot} alt="shape" />
         </Box>
-        <SimpleGrid columns={2} spacing={8}>
+        <SimpleGrid spacing={8} templateColumns={{ sm: "1fr", md: "1fr 1fr" }}>
           <Container maxW={"lg"} zIndex="2">
-            <Box pt={95}>
-              <Heading color="blue.500" size={"sm"} mb={34}>
-                {bannerData.heading}
+            <Stack pt={95}>
+              <Heading mb={30} color="blue.500" size="sm">
+                Discover your journey
               </Heading>
-              <Heading mb={25} size="2xl">
-                {bannerData.subTitle}
+              <Heading size="2xl">
+                Launch Your Dev Career With Web 3 and Metaverse
               </Heading>
-              <Text color="#575757" fontSize={"sm"}>
-                {bannerData.description}
+              <Text color="#575757" fontSize={"sm"} pt={3}>
+                Certified Web 3.0 and Metaverse Developer. A One and Quarter
+                Years Panaverse DAO Earn as you Learn Program Getting Ready for
+                the Next Generation of the Internet.
               </Text>
-              <Box pt={18}>
-                <Link
-                  as={NextLink}
-                  isExternal
-                  href={"https://portal.piaic.org/signup"}
+            </Stack>
+            <Box pt={5}>
+              <Link
+                as={NextLink}
+                href={"/web3"}
+                _hover={{
+                  outline: "none",
+                  boxShadow: "md",
+                }}
+              >
+                <Button
+                  colorScheme="blue"
+                  padding="0px 40px"
+                  height={50}
                   _hover={{
-                    outline: "none",
+                    bg: "red.500",
                   }}
                 >
-                  <Button
-                    colorScheme="blue"
-                    padding="0px 40px"
-                    height={50}
-                    _hover={{
-                      bg: "red.500",
-                    }}
-                    display={{ base: "none", md: "inline-flex" }}
-                  >
-                    Explore Course
-                  </Button>
-                </Link>
-              </Box>
+                  Explore Course
+                </Button>
+              </Link>
             </Box>
           </Container>
           <Stack zIndex="1" position={"relative"}>
